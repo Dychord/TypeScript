@@ -364,3 +364,12 @@ var frontPage = function (list) {
 //     para.innerText = "New paragraph content!";
 // }
 // -------------------------LITERAL TYPES-------------------------
+// normal
+var num = 3;
+num = 4;
+num = 2;
+// literal
+var numb;
+numb = 34; // performing this step is extremely important if not then the value of numb will be undefined!
+console.log(numb);
+// then there are string literals, boolean, etc

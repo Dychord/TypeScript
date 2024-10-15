@@ -490,3 +490,15 @@ const frontPage = function (list: HTMLLIElement) {     // second - with function
 
 
 // -------------------------LITERAL TYPES-------------------------
+
+// normal
+let num = 3;
+num = 4;
+num = 2;
+
+// literal
+let numb: 34;
+numb = 34;   // performing this step is extremely important if not then the value of numb will be undefined!
+console.log(numb);
+
+// then there are string literals, boolean, etc
