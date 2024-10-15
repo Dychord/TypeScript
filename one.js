@@ -295,11 +295,52 @@ lap.setDiscount(10);
 lap.name = 'Lenovo Ideapad Slim i5';
 console.log(lap.name);
 // ------------------------------FUNCTIONS-------------------------------
-// Named Function
-// Anonymus Function
-// Arrow Function
-// Explicit Return Type
-// Implicit Return Type
-// Optional Parameters
-// Default Parameters
-// Rest Parameters
+// Named Function -------------
+// Anonymus Function -------------
+// function(): void { };  //You cannot write function(): void {} by itself without context or invocation. This will cause a syntax error:
+// You can write function(): void {} as a valid function signature in TypeScript, but you must either assign the function to a variable or use it as part of a larger expression (such as in a callback or an IIFE). If you write it by itself, it won't do anything, and you'll likely get a syntax error.
+var greet = function () {
+    console.log("hey");
+};
+greet();
+// Arrow Function -------------
+var arrowFn = function () {
+    return "Falcon";
+};
+arrowFn();
+// Immediately Invoked Function Expressions (IIFE) -------------
+(function () {
+    console.log("IIFE");
+})();
+// Explicit Return Type -------------
+var hero = function () {
+    return "Superman";
+};
+// Implicit Return Type -------------
+var hero2 = function () {
+    return "Spiderman";
+};
+// Optional Parameters -------------
+function userDetails(name, age, gender) {
+    return "".concat(name);
+}
+userDetails('Falcon', 28);
+// Default Parameters -------------
+function tellStory(storyName) {
+    if (storyName === void 0) { storyName = 'default'; }
+    return "So this story is about a girl who...";
+}
+tellStory("Frozen"); // default parameters helps us to set a default value for the field if not provided when we call the funtion! And when I do provide it I can still keep the default value!
+// Rest Parameters -------------
+function spreadOperatorAndRestOperator(someNumber) {
+    var names = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        names[_i - 1] = arguments[_i];
+    }
+    console.log(names);
+}
+spreadOperatorAndRestOperator(3, "Ronaldo", "Messi", "Gian", "ZombieLand");
+function returnName(firstName, lastName) {
+    return "".concat(firstName + ' ' + lastName);
+}
+console.log(returnName('Dychord', 'Gaming'));

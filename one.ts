@@ -397,11 +397,59 @@ console.log(lap.name);
 
 // ------------------------------FUNCTIONS-------------------------------
 
-// Named Function
-// Anonymus Function
-// Arrow Function
-// Explicit Return Type
-// Implicit Return Type
-// Optional Parameters
-// Default Parameters
-// Rest Parameters
+// Named Function -------------
+
+// Anonymus Function -------------
+// function(): void { };  //You cannot write function(): void {} by itself without context or invocation. This will cause a syntax error:
+// You can write function(): void {} as a valid function signature in TypeScript, but you must either assign the function to a variable or use it as part of a larger expression (such as in a callback or an IIFE). If you write it by itself, it won't do anything, and you'll likely get a syntax error.
+const greet = function (): void {
+    console.log("hey");
+};
+greet();
+
+
+// Arrow Function -------------
+const arrowFn = (): string => {
+    return "Falcon";
+};
+arrowFn();
+// Immediately Invoked Function Expressions (IIFE) -------------
+(function (): void {
+    console.log("IIFE");
+})()
+
+
+// Explicit Return Type -------------
+const hero = (): string => {
+    return "Superman"
+}
+// Implicit Return Type -------------
+const hero2 = () => {
+    return "Spiderman"
+}
+
+
+// Optional Parameters -------------
+function userDetails(name: string, age: number, gender?: string): string {     // ? - aa jaye toh thik nahi aye toh thik!
+    return `${name}`
+}
+userDetails('Falcon', 28)
+
+
+// Default Parameters -------------
+function tellStory(storyName: string = 'default'): string {
+    return "So this story is about a girl who..."
+}
+tellStory("Frozen")   // default parameters helps us to set a default value for the field if not provided when we call the funtion! And when I do provide it I can still keep the default value!
+
+// Rest Parameters -------------
+function spreadOperatorAndRestOperator(someNumber: number, ...names: string[]): void {
+    console.log(names);
+}
+spreadOperatorAndRestOperator(3, "Ronaldo", "Messi", "Gian", "ZombieLand")
+
+function returnName(firstName: string, lastName: string): string {    // Remember two things first - what's the function is returning and second - what type of parameters does it have!
+    return `${firstName + ' ' + lastName}`
+}
+
+console.log(returnName('Dychord', 'Gaming'));
