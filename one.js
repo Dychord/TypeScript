@@ -347,10 +347,13 @@ console.log(returnName('Dychord', 'Gaming'));
 // -------------------------------MODULES------------------------------
 // -------------------------------TYPE ASSERTIONS----------------------
 // defining the type of parameter of your frontend part - like
-var para = document.getElementById('para');
+// there are two ways to write it
+var para = document.getElementById('para'); // first - without function
 if (para) {
     para.innerText = "New paragraph content!";
 }
+var frontPage = function (list) {
+};
 // Type assertion (as HTMLParagraphElement) is the most common and recommended approach.
 // Type casting (<HTMLParagraphElement>) is also valid but less common in modern TypeScript.
 // const para = <HTMLParagraphElement>document.getElementById('para');
@@ -360,3 +363,4 @@ if (para) {
 // if (para instanceof HTMLParagraphElement) {
 //     para.innerText = "New paragraph content!";
 // }
+// -------------------------LITERAL TYPES-------------------------
