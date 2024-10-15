@@ -442,14 +442,42 @@ function tellStory(storyName: string = 'default'): string {
 }
 tellStory("Frozen")   // default parameters helps us to set a default value for the field if not provided when we call the funtion! And when I do provide it I can still keep the default value!
 
+
 // Rest Parameters -------------
 function spreadOperatorAndRestOperator(someNumber: number, ...names: string[]): void {
     console.log(names);
 }
 spreadOperatorAndRestOperator(3, "Ronaldo", "Messi", "Gian", "ZombieLand")
 
+
 function returnName(firstName: string, lastName: string): string {    // Remember two things first - what's the function is returning and second - what type of parameters does it have!
     return `${firstName + ' ' + lastName}`
 }
 
 console.log(returnName('Dychord', 'Gaming'));
+
+
+// -------------------------------MODULES------------------------------
+
+
+// -------------------------------TYPE ASSERTIONS----------------------
+// defining the type of parameter of your frontend part - like
+
+const para:HTMLParagraphElement = document.getElementById('para') as HTMLParagraphElement
+if (para) {
+    para.innerText = "New paragraph content!";
+}
+
+// Type assertion (as HTMLParagraphElement) is the most common and recommended approach.
+// Type casting (<HTMLParagraphElement>) is also valid but less common in modern TypeScript.
+// const para = <HTMLParagraphElement>document.getElementById('para');
+
+
+// Alternative Option:
+// If you want to keep para as HTMLElement, you don't need the type assertion to HTMLParagraphElement. But in that case, TypeScript won't know that para is a paragraph, and it might complain when accessing innerText or other paragraph-specific properties.
+
+// const para: HTMLElement | null = document.getElementById('para');
+
+// if (para instanceof HTMLParagraphElement) {
+//     para.innerText = "New paragraph content!";
+// }
